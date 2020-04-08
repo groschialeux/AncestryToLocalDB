@@ -469,7 +469,7 @@ Public Class Form1
             cmd.Parameters.Add(New SqlParameter("@BirthDate", birth.BirthDate))
             cmd.Parameters.Add(New SqlParameter("@BirthPlace", birth.BirthPlace))
             cmd.ExecuteNonQuery()
-            AddDBSources(birth.Sources, myPerson.guid)
+            AddDBSources(birth.Sources, birth.guid)
         Next
 
         For Each baptism As BaptismInfo In myPerson.Baptism
@@ -480,7 +480,7 @@ Public Class Form1
             cmd.Parameters.Add(New SqlParameter("@BaptismDate", baptism.BaptismDate))
             cmd.Parameters.Add(New SqlParameter("@BaptismPlace", baptism.BaptismPlace))
             cmd.ExecuteNonQuery()
-            AddDBSources(baptism.Sources, myPerson.guid)
+            AddDBSources(baptism.Sources, baptism.guid)
         Next
 
         For Each death As DeathInfo In myPerson.Death
@@ -492,7 +492,7 @@ Public Class Form1
             cmd.Parameters.Add(New SqlParameter("@DeathPlace", death.DeathPlace))
             cmd.Parameters.Add(New SqlParameter("@DeathDesc", death.DeathDesc))
             cmd.ExecuteNonQuery()
-            AddDBSources(death.Sources, myPerson.guid)
+            AddDBSources(death.Sources, death.guid)
         Next
 
         For Each burial As BurialInfo In myPerson.Burial
@@ -503,7 +503,7 @@ Public Class Form1
             cmd.Parameters.Add(New SqlParameter("@BurialDate", burial.BurialDate))
             cmd.Parameters.Add(New SqlParameter("@BurialPlace", burial.BurialPlace))
             cmd.ExecuteNonQuery()
-            AddDBSources(burial.Sources, myPerson.guid)
+            AddDBSources(burial.Sources, burial.guid)
         Next
 
         For Each residence As Residence In myPerson.Residences
@@ -515,7 +515,7 @@ Public Class Form1
             cmd.Parameters.Add(New SqlParameter("@ResidencePlace", residence.ResidencePlace))
             cmd.Parameters.Add(New SqlParameter("@ResidenceDesc", residence.ResidenceDesc))
             cmd.ExecuteNonQuery()
-            AddDBSources(residence.Sources, myPerson.guid)
+            AddDBSources(residence.Sources, residence.guid)
         Next
 
         For Each xevent As LifeEvent In myPerson.Events
@@ -538,7 +538,7 @@ Public Class Form1
             cmd.Parameters.Add(New SqlParameter("@Place", occupation.Place))
             cmd.Parameters.Add(New SqlParameter("@Desc", occupation.Description))
             cmd.ExecuteNonQuery()
-            AddDBSources(occupation.Sources, myPerson.guid)
+            AddDBSources(occupation.Sources, occupation.guid)
         Next
 
         For Each document As AncestryToLocalDB.Object In myPerson.Objects
