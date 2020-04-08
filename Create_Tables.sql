@@ -87,7 +87,6 @@ Create Table Names
 	gedGuid UniqueIdentifier,
 	PersonUID UniqueIdentifier,
 	PersonName nvarchar(100),
-	BirthUID UniqueIdentifier
 	Constraint [PK_Names] Primary Key Clustered
 	(
 		gedGuid

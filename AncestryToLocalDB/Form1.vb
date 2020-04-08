@@ -452,9 +452,14 @@ Public Class Form1
         cmd.Parameters.Add(New SqlParameter("@PersonID", myPerson.PersonID))
         cmd.Parameters.Add(New SqlParameter("@Gender", myPerson.Gender))
         cmd.Parameters.Add(New SqlParameter("@ChildOfFamily", myPerson.ChildOfFamily))
+        cmd.Parameters.Add(New SqlParameter("@PersonName", myPerson.Name.Name))
+        cmd.Parameters.Add(New SqlParameter("@NameGuid", myPerson.Name.guid))
+
 
         cmd.CommandText = "AddPerson"
         cmd.ExecuteNonQuery()
+
+        AddDBSources(myPerson.Name.Sources, myPerson.guid)
 
         For Each birth As BirthInfo In myPerson.Birth
             cmd.CommandText = "AddBirth"

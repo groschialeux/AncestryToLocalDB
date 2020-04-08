@@ -22,10 +22,13 @@ Create Procedure AddPerson(
 	@gedGuid UniqueIdentifier,
 	@PersonID int,
 	@Gender nvarchar(5),
-	@ChildOfFamily int
+	@ChildOfFamily int,
+	@PersonName nvarchar(100),
+	@NameGuid UniqueIdentifier
 )
 as
 Insert into Person(gedGuid, PersonID, Gender, ChildOfFamily) Values(@gedGuid, @PersonID, @Gender, @ChildOfFamily)
+Insert into Names(gedGuid, PersonUID, PersonName) Values (@NameGuid, @gedGuid, @PersonName)
 go
 
 Create Procedure AddBirth(
@@ -151,15 +154,20 @@ as
 Truncate Table Baptism
 Truncate Table Birth
 Truncate Table Burial
-Truncate Table Person
-Truncate Table Source
+Truncate Table Children
 Truncate Table Death
-Truncate Table Residence
-Truncate Table Event
-Truncate Table Occupation
+Truncate Table Divorce
 Truncate Table Document
-Truncate Table Spouse
 Truncate Table Employment
+Truncate Table Event
 Truncate Table Family
+Truncate Table Marriage
+Truncate Table Names
+Truncate Table Note
+Truncate Table Occupation
+Truncate Table Person
+Truncate Table Residence
+Truncate Table Source
+Truncate Table Spouse
 Go
 
