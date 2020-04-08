@@ -21,8 +21,8 @@ This program will load a gedcom file exported from Ancestry.com into a .NET Clas
 
 4. Open the AncestryToLocalDB Visual Studio solution and run it to import a Ancestry gedcom into your new LocalDB Database.
 
-## Disclaimer.  At this point this program has only been tested with my own personal gedcom file exported from the ancestry.ca web site. The "Ancestry", "Family" and "Person" classes have been constructed from that gedcom, not from official gedcom specifications.  Many gedcom tags are currently not covered by this.
+###### Note:  At this point this program has only been tested with my own personal gedcom file exported from the ancestry.ca web site. The "Ancestry", "Family" and "Person" classes have been constructed from that gedcom, not from official gedcom specifications.  Many gedcom tags are currently not covered by this.
 
-## Support for currently missing tags will be added as needed from the developer and as the community steps in to contribute in making this a complete supporting the entire set of gedcom tags.
+###### Support for currently missing tags will be added as needed from the developer and as the community steps in to contribute in making this a complete supporting the entire set of gedcom tags.
 
 
