@@ -43,6 +43,9 @@ Public Class Form1
 
     Private Sub bImport_Click(sender As Object, e As EventArgs) Handles bImport.Click
         Me.Cursor = Cursors.WaitCursor
+        If cbClear.Checked = True Then
+            ClearData()
+        End If
         If IO.File.Exists(GedcomFile.Text) Then
             Dim rType As Int16 = 0, gdata As String = "", CurrentLineNo As Int16 = 0
 
@@ -60,7 +63,7 @@ Public Class Form1
 
             Loop
             Me.Cursor = Cursors.Arrow
-            MessageBox.Show("Import process complete !")
+            MessageBox.Show("Import process complete !", "Import", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 
@@ -742,6 +745,14 @@ Public Class Form1
             End If
         End While
 
+    End Sub
+
+
+    Private Sub ClearData()
+        Dim cmd As SqlCommand = myConnection.CreateCommand
+        cmd.CommandType = CommandType.StoredProcedure
+        cmd.CommandText = "TruncateAllTables"
+        cmd.ExecuteNonQuery()
     End Sub
 
 End Class

@@ -31,6 +31,7 @@ Partial Class Form1
         Me.bSelect = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.bImport = New System.Windows.Forms.Button()
+        Me.cbClear = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'connectString
@@ -113,11 +114,22 @@ Partial Class Form1
         Me.bImport.Text = "Import"
         Me.bImport.UseVisualStyleBackColor = True
         '
+        'cbClear
+        '
+        Me.cbClear.AutoSize = True
+        Me.cbClear.Location = New System.Drawing.Point(187, 69)
+        Me.cbClear.Name = "cbClear"
+        Me.cbClear.Size = New System.Drawing.Size(74, 17)
+        Me.cbClear.TabIndex = 8
+        Me.cbClear.Text = "Clear data"
+        Me.cbClear.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(875, 116)
+        Me.ClientSize = New System.Drawing.Size(875, 122)
+        Me.Controls.Add(Me.cbClear)
         Me.Controls.Add(Me.bImport)
         Me.Controls.Add(Me.bSelect)
         Me.Controls.Add(Me.GedcomFile)
@@ -128,7 +140,7 @@ Partial Class Form1
         Me.Controls.Add(Me.connectString)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Form1"
+        Me.Text = "Ancestry To LocalDB"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -143,4 +155,5 @@ Partial Class Form1
     Friend WithEvents bSelect As Button
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents bImport As Button
+    Friend WithEvents cbClear As CheckBox
 End Class
